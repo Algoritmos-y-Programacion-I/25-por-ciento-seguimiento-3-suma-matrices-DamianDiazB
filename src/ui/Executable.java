@@ -38,7 +38,7 @@ public class Executable {
         System.out.println("Inserte los numeros de la matriz 1: ");
         for(int i = 0; i < 2; i++) {
             for(int j = 0; j < 2; j++) {
-                System.out.println("Insertar dato en fila " + i + " y columna " + j + " : ");
+                System.out.println("Insertar dato en fila " + (i+1) + " y columna " + (j+1) + " : ");
                 int valor = escaner.nextInt();
                 escaner.nextLine();
                 cont.getMatriz1().insertarValor(i, j, valor);
@@ -50,6 +50,38 @@ public class Executable {
                 System.out.print(cont.getMatriz1().getMatriz()[i][j] + " ");
             }
             System.out.println();
+        }
+
+        System.out.println("Inserte los números de la matriz 2: ");
+        for (int i = 0; i < 2; i++) {
+            for (int j = 0; j < 2; j++) {
+                System.out.println("Insertar dato en fila " + (i+1) + " y columna " + (j+1) + " : ");
+                int valor = escaner.nextInt();
+                escaner.nextLine();
+                cont.getMatriz2().insertarValor(i, j, valor);
+            }
+        }
+
+        for (int i = 0; i < 2; i++) {
+            for (int j = 0; j < 2; j++) {
+                System.out.print(cont.getMatriz2().getMatriz()[i][j] + " ");
+            }
+            System.out.println();
+        }
+
+        int[][] matrizResultado = new int[2][2];
+        for (int i = 0; i < 2; i++) {
+            for (int j = 0; j < 2; j++) {
+            matrizResultado[i][j] = cont.getMatriz1().getMatriz()[i][j] + cont.getMatriz2().getMatriz()[i][j];
+            }
+        }
+
+        System.out.println("Suma de Matrices:");
+        for (int i = 0; i < 2; i++) {
+            for (int j = 0; j < 2; j++) {
+            System.out.print(matrizResultado[i][j] + " ");
+            }
+        System.out.println();
         }
 
     }
